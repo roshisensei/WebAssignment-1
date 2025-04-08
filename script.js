@@ -79,8 +79,6 @@ function setupCheckboxListeners() {
         cb.addEventListener('change', (event) => {
             const optionValue = event.target.nextElementSibling.innerText;  // Get the label text
 
-            // Since we know there's only one multipleSelect question and it's the first one
-            // const multiSelectQuestion = questions.find(q => q.questionType === "multipleSelect");
             const multiSelectQuestion = questions[0];
 
             if (event.target.checked) {
@@ -172,10 +170,7 @@ function renderQuestions() {
         });
     })
 
-    // checkboxBtn = document.querySelectorAll('.styled-checkbox');
     setupCheckboxListeners();
-
-    // Update selections based on previously answered questions
     selectedAnswer(currentIndex);
     updateNextButtonState();
 
