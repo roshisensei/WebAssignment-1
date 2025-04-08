@@ -1,106 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment</title>
 
-    <link rel="stylesheet" href="styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment</title>
 
-    <!-- import of back icon from font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- import of mulish font from googlefonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="wrapper">
+  <!-- import of back icon from font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- import of mulish font from googlefonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
       <div class="progress-bar">
         <div class="progress-line l1"></div>
         <div class="progress-line l2"></div>
         <div class="progress-line l3"></div>
-        <i class="fa-solid fa-xmark"></i>
       </div>
-      <div class="description">
-        <h4>See which account type is best for you</h4>
-      </div>
-      <div class="big-box">
-      <div class="questions">
-          <ol>
-            <li>
-              <div class="question question1">
-                <span>Which age ranges do you teach? </span>
-                <p>Select all that apply</p>
-                <form action="">
-                  <div class="option-list">
-                    <div class="options">
-                      <input
-                        type="checkbox"
-                        class="styled-checkbox"
-                        name=""
-                        id="primary"
-                      />
-                      <label for="primary">Primary (5-10)</label>
-                    </div>
-                    <div class="options">
-                      <input
-                        type="checkbox"
-                        class="styled-checkbox"
-                        name=""
-                        id="Secondary"
-                      />
-                      <label for="Secondary">Secondary (10-16)</label><br />
-                    </div>
-                    <div class="options">
-                      <input
-                        type="checkbox"
-                        class="styled-checkbox"
-                        name=""
-                        id="adult"
-                      />
-                      <label for="adult">Adult (16+)</label><br />
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-            <li>
-              <div class="question">
-                <div class="question2">
-                  Can your learners sign up and activate their learning materials
-                  independently?
-                </div>
-                <div class="btn-container">
-                  <button type="button " class="btn yes-btn" value="Yes">Yes</button>
-                  <button type="button " class="btn no-btn" value="No">No</button>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-        <div class="quiz-footer">
-          <div class="back-btn">
-            <i class="back fa-solid fa-angle-left"></i>
-            <button class="back">Back</button>
-          </div>
-          <button class="next" disabled>
-            Next <i class="fa-solid fa-angle-right"></i>
-          </button>
-        </div>
-      </div>
-      
-    </div>
+      <i class="fa-solid fa-xmark"></i>
+    </header>
 
-  </body>
+    <div class="description">
+      <h1>See which account type is best for you</h1>
+    </div>
+    <div class="content-box">
+      <div class="questions">
+        <ol class="question-list"></ol>
+      </div>
+    </div>
+    <div class="quiz-footer">
+      <div class="back-btn">
+        <i class="back fa-solid fa-angle-left"></i>
+        <button class="back">Back</button>
+      </div>
+      <button type="submit" class="next" disabled>
+        Next <i class="fa-solid fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
