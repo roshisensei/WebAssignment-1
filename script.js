@@ -61,9 +61,11 @@ let questions = [
 
 
 let checkbox = document.querySelectorAll(".styled-checkbox");
+let lines = document.querySelectorAll(".progress-line");
 let nextBtn = document.querySelector(".next");
-let backBtn = document.querySelector(".back-btn");
+let  backBtn = document.querySelector(".back-btn");
 let questionCard = document.querySelector(".question-list");
+
 
 
 let mcqBtn;
@@ -175,7 +177,7 @@ function renderQuestions() {
     setupCheckboxListeners();
     selectedAnswer(currentIndex);
     updateNextButtonState();
-
+    updateProgressBar(currentIndex)
 
 
 }
@@ -209,13 +211,12 @@ nextBtn.addEventListener("click", () => {
     if (currentIndex + questionsPerPage < questions.length) {
         currentIndex += questionsPerPage; // Move to the next set of questions
         renderQuestions();
+        updateProgressBar(currentIndex);
         updateNextButtonState();
         selectedAnswer(currentIndex);
     } else {
         questions.forEach((qn, idx) => {
-
             console.log( qn.answeredByUser);
-            // console.log(questions);
         })
     }
 });
@@ -226,6 +227,7 @@ backBtn.addEventListener("click", () => {
         currentIndex -= questionsPerPage; // Move to the next set of questions
         renderQuestions(); // Re-render questions
         selectedAnswer(currentIndex);
+        updateProgressBar(currentIndex);
         nextBtn.innerHTML = 'next';
     }
 });
@@ -269,6 +271,25 @@ function selectedAnswer(currIdx) {
 
     }
 }
+
+
+function updateProgressBar(currIdx) {
+    // Reset all progress lines
+    let pageNumber = Math.floor(currIdx / questionsPerPage);
+    Array.from(lines).forEach((line, index) => {
+      if (index <= pageNumber) {
+            let l = document.querySelector(`.l${index+1}`);
+            l.classList.add('active');
+           
+    } else {
+            let l = document.querySelector(`.l${index+1}`);
+            l.classList.remove('active');
+      }
+    });
+  }
+
+
+
 
 
 

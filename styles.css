@@ -36,7 +36,31 @@ header {
   border-radius: 5px;
   background-color: #d9d9d9;
 }
+.progress-bar .progress-line .l1, .progress-bar .progress-line .l2, .progress-bar .progress-line .l3 {
+  height: 3px;
+  width: 12vw;
+  border-radius: 5px;
+}
+.progress-bar .progress-line .l1.active {
+  background-color: #be8cff;
+}
+.progress-bar .progress-line .l2.active, .progress-bar .progress-line .l3.active {
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-fill-mode: forwards;
+}
 
+@keyframes loading {
+  from {
+    width: 0%;
+    background-color: #d9d9d9;
+  }
+  to {
+    width: 100%;
+    background-color: #be8cff;
+  }
+}
 p {
   font-size: 9px;
   color: #696969;
