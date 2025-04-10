@@ -95,6 +95,8 @@ function setupCheckboxListeners() {
         });
     });
 }
+
+// Rendering the current page of questions based on the question-type
 function renderQuestions() {
     questionCard.innerHTML = ""; // Clear previous questions
     for (let i = currentIndex; i < currentIndex + questionsPerPage && i < questions.length; i++) {
@@ -245,6 +247,7 @@ function SelectedButton(selectBtn) {
     updateNextButtonState();
 }
 
+// mark button active which is answered by user based on the current page
 function selectedAnswer(currIdx) {
 
     for (let i = currIdx; i < currIdx + questionsPerPage; i++) {
